@@ -17,8 +17,8 @@ function date_($string) {
 
     /*
     if($data['Id'] != 'Id') {
-        echo 'Id: '.date_($data['Id']).'<br>';
-        echo 'Timezone: '.date_($data['Tz']).'<br>';
+        echo 'Id: '.$data['Id'].'<br>';
+        echo 'Timezone: '.$data['Tz'].'<br>';
         echo 'From: '.date_($data['From']).'<br>';
         echo 'To: '.date_($data['To']).'<br>';
         echo 'Alarm: '.date_($data['Sched']).'<br>';
