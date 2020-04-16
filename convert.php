@@ -75,4 +75,6 @@ $filename = "sleep-test2.csv";
 $json = convertSleepCsvToJson(loadFile($filename));
 print_r($json);
 
+file_put_contents('output.json', $json);
+
 ?>
