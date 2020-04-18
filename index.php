@@ -21,6 +21,7 @@
 		--background_input: hsl(var(--hue_blue), 10%, 90%);
 		--background_button: hsl(var(--hue_green), 80%, 85%);
 		--color: hsl(var(--hue_blue), 10%, 15%);
+		--color_link: hsl(var(--hue_blue), 80%, 5%);
 		--color_red: hsl(var(--hue_red), 80%, 30%);
 		--color_blue: hsl(var(--hue_blue), 80%, 30%);
 		--color_green: hsl(var(--hue_green), 80%, 30%);
@@ -38,6 +39,7 @@
 		--background_input: hsl(var(--hue_blue), 10%, 10%);
 		--background_button: hsl(var(--hue_green), 80%, 10%);
 		--color: hsl(var(--hue_blue), 10%, 95%);
+		--color_link: hsl(var(--hue_blue), 80%, 85%);
 		--color_red: hsl(var(--hue_red), 80%, 70%);
 		--color_blue: hsl(var(--hue_blue), 80%, 70%);
 		--color_green: hsl(var(--hue_green), 80%, 70%);
@@ -64,6 +66,10 @@ body {
 }
 
 
+
+a {
+	color: var(--color_link);
+}
 
 p {
 	margin: 0;
@@ -100,8 +106,8 @@ header {
 }
 
 #made-by {
-    margin-top: 50px;
-    color: grey;
+	margin-top: 50px;
+	opacity: .5;
 }
 
 
@@ -248,7 +254,7 @@ $(document).ready(function() {
 
 	echo '</form>';
 
-	echo '<p id="made-by">Made by Erik. Check out his other project - weather service <a href="https://serenum.org/" target="_blank">Serenum.org</a></p>';
+	echo '<p id="made-by">Made by Erik. Check out his other project - the weather service <a href="https://serenum.org/" target="_blank">Serenum</a>.</p>';
 
 
 ?>
