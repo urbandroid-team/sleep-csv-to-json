@@ -99,6 +99,11 @@ header {
 	margin-bottom: 10px;
 }
 
+#made-by {
+    margin-top: 50px;
+    color: grey;
+}
+
 
 
 .message {
@@ -242,6 +247,8 @@ $(document).ready(function() {
 		echo '<input type="submit" name="button-upload" value="Upload">';
 
 	echo '</form>';
+
+	echo '<p id="made-by">Made by Erik. Check out his other project - weather service <a href="https://serenum.org/" target="_blank">Serenum.org</a></p>';
 
 
 ?>
