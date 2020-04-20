@@ -109,7 +109,9 @@ header {
 	margin-top: 50px;
 	opacity: .5;
 }
-
+#privacy {
+	margin-top: 50px;
+}
 
 
 .message {
@@ -255,7 +257,7 @@ $(document).ready(function() {
 
 	echo '</form>';
 
-	echo '<p id="privacy">The file is converted on the fly, your data is deleted from the server right after the conversion. The convertor is open-source (<a href="https://github.com/urbandroid-team/sleep-csv-to-json" target="_blank">see the source</a>) so you can take a look yourself, or run it on your server/local computer</p>';
+	echo '<p id="privacy">The file is converted on the fly, your data is deleted from the server right after the conversion. The convertor is open-source (<a href="https://github.com/urbandroid-team/sleep-csv-to-json" target="_blank">see the source</a>) so you can take a look yourself, or run it on your server/local computer.</p>';
 
 	echo '<p id="made-by">Made by Erik. Check out his other project - the weather service <a href="https://serenum.org/" target="_blank">Serenum</a>.</p>';
 
