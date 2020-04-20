@@ -239,10 +239,11 @@ $(document).ready(function() {
 
 
 	echo '<header>';
-		echo 'Convert CSV to JSON';
+		echo 'Convert sleep data CSV file to JSON';
 	echo '</header>';
 
-	echo '<p>To download your CSV file from Sleep as Android, press on Backup in the left menu drawer and choose Export data. The CSV can be found in sleep-data folder on your internal memory.</p>';
+	echo '<p>Sleep as Android normally outputs your sleep data in CSV format. If you want to have them in a more human-friedly JSON format, you can convert it here.</p>';
+	echo '<p>To download your CSV file from Sleep as Android, tap <i>Backup</i> in the left menu drawer and choose <i>Export data</i>. The CSV can be found in /sleep-data/sleep-export.csv on your internal memory.</p>';
 
 
 
