@@ -36,7 +36,10 @@
 						$resultRecordAssocArray['actigraphy'] = array();
 					}
 
-					$resultRecordAssocArray['actigraphy'][$headerRowArray[$i]] = $valuesRowArray[$i];
+					$resultRecordAssocArray['actigraphy'][] = [
+						'time' => date('H:i', strtotime($headerRowArray[$i])),
+						'data' => $valuesRowArray[$i]
+					];
 
 					# Noise values array
 					if(!isset($resultRecordAssocArray['noise'])) {

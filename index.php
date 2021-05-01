@@ -3,46 +3,31 @@
 <html>
 <head>
 
-
-<!--  TITEL  -->
 <title>Convert CSV to JSON</title>
 
-<!-- STILMALL -->
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
-
 @media (prefers-color-scheme: light) {
 	:root {
-		--hue_blue: 210;
-		--hue_yellow: 50;
-		--hue_green: 110;
-		--hue_red: 10;
-		--background: hsl(var(--hue_blue), 10%, 99%);
-		--background_input: hsl(var(--hue_blue), 10%, 90%);
-		--background_button: hsl(var(--hue_green), 80%, 85%);
-		--color: hsl(var(--hue_blue), 10%, 15%);
-		--color_link: hsl(var(--hue_blue), 80%, 5%);
-		--color_red: hsl(var(--hue_red), 80%, 30%);
-		--color_blue: hsl(var(--hue_blue), 80%, 30%);
-		--color_green: hsl(var(--hue_green), 80%, 30%);
+		--background: #ffffff;
+		--background_button: #8ccd8e;
+		--color: #030f16;
+		--color_link: #2166cf;
+		--color_red: #970606;
+		--color_blue: #064397;
+		--color_green: #06970a;
 	}
 }
 
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--hue_blue: 210;
-		--hue_yellow: 50;
-		--hue_green: 110;
-		--hue_red: 10;
-		--background: hsl(var(--hue_blue), 10%, 5%);
-		--background_input: hsl(var(--hue_blue), 10%, 10%);
-		--background_button: hsl(var(--hue_green), 80%, 10%);
-		--color: hsl(var(--hue_blue), 10%, 95%);
-		--color_link: hsl(var(--hue_blue), 80%, 85%);
-		--color_red: hsl(var(--hue_red), 80%, 70%);
-		--color_blue: hsl(var(--hue_blue), 80%, 70%);
-		--color_green: hsl(var(--hue_green), 80%, 70%);
+		--background: #191c1f;
+		--background_button: #103d15;
+		--color: #f7f9fb;
+		--color_link: #659ff0;
+		--color_red: #f64646;
+		--color_blue: #4690f6;
+		--color_green: #46f657;
 	}
 }
 
@@ -56,8 +41,8 @@ html {
 body {
 	background-color: var(--background);
 	color: var(--color);
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 0.960rem;
+	font-family: 'Clear Sans', sans-serif;
+	font-size: 0.920rem;
 	font-weight: 400;
 	margin: 0 auto;
 	padding: 50px 0;
@@ -77,12 +62,10 @@ p {
 }
 
 input {
-	background-color: var(--backgroun_input);
 	border: 0;
 	border-radius: 3px;
-	color: hsl(210, 10%, 10%);
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 0.860rem;
+	font-family: 'Clear Sans', sans-serif;
+	font-size: 0.920rem;
 	font-weight: 400;
 	padding: 5px;
 	line-height: 15px;
@@ -95,22 +78,29 @@ input[type="submit"] {
 	padding: 8px 10px;
 }
 
-form {
-	margin-top: 50px;
-}
-
 header {
 	font-size: 1.580rem;
 	font-weight: 700;
-	margin-bottom: 10px;
+	line-height: 2rem;
+	margin: 0 0 10px 0;
+	padding: 0;
 }
 
-#made-by {
-	margin-top: 50px;
+form {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 30px 20px;
+}
+
+p#made-by {
+	margin-top: 10px;
 	opacity: .5;
 }
-#privacy {
-	margin-top: 50px;
+
+p#made-by > a {
+	color: var(--color);
 }
 
 
@@ -133,29 +123,11 @@ header {
 
 
 
-.NFI-wrapper {
-	vertical-align: middle;
-}
-
-.NFI-button {
-	padding: 5px 10px;
-}
-
-.NFI-filename {
-	background-color: var(--background_input);
-	border: 0;
-	border-radius: 2px;
-	color: var(--color);
-	height: 30px;
-}
 
 
 
 
-
-
-
-@media only screen and (max-width: 840px), only screen and (max-device-width: 840px) {
+@media only screen and (max-width: 660px), only screen and (max-device-width: 660px) {
 
 	body {
 		padding: 25px 30px;
@@ -166,11 +138,7 @@ header {
 
 
 
-
-
-
-
-@media only screen and (max-width: 375px), only screen and (max-device-width: 375px) {
+@media only screen and (max-width: 476px), only screen and (max-device-width: 476px) {
 
 	input[type="submit"] {
 		margin-top: 10px;
@@ -179,19 +147,11 @@ header {
 }
 </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+<script src="jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-!function(a){a.fn.nicefileinput=function(t){var e={label:"Browse...",fullPath:!1};return t&&a.extend(e,t),this.each(function(){var t=this;if(void 0===a(t).attr("data-styled")){var l=Math.round(1e4*Math.random()),r=new Date,i=r.getTime()+l.toString(),n=a('<input type="text" readonly="readonly">').css({display:"block","float":"left",margin:0,padding:"0 5px"}).addClass("NFI-filename NFI"+i),s=a("<div>").css({overflow:"hidden",position:"relative",display:"block","float":"left","white-space":"nowrap","text-align":"center"}).addClass("NFI-button NFI"+i).attr("disabled",a(t).attr("disabled")).html(e.label);a(t).after(n),a(t).wrap(s),a(".NFI"+i).wrapAll('<div class="NFI-wrapper" id="NFI-wrapper-'+i+'" />'),a(".NFI-wrapper").css({overflow:"auto",display:"inline-block"}),a("#NFI-wrapper-"+i).addClass(a(t).attr("class")),a(t).css({opacity:0,position:"absolute",border:"none",margin:0,padding:0,top:0,right:0,cursor:"pointer",height:"60px"}).addClass("NFI-current"),a(t).on("change",function(){var l=a(t).val();if(e.fullPath)n.val(l);else{var r=l.split(/[/\\]/);n.val(r[r.length-1])}}),a(t).attr("data-styled",!0)}})}}(jQuery);
-
 $(document).ready(function() {
 
 
-	$('[type="file"]').nicefileinput({
-		label: 'Browse'
-	});
-
-
-	// 
 	$('body').on('click', '[name="button-upload"]', function() {
 		$('.message').show().removeClass('color-red').removeClass('color-blue');
 
@@ -224,6 +184,9 @@ $(document).ready(function() {
 });
 </script>
 
+<link rel="stylesheet" href="//brick.freetls.fastly.net/Clear+Sans:400,700/Ubuntu:400">
+<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
 
@@ -244,9 +207,8 @@ $(document).ready(function() {
 		echo 'Convert sleep data CSV file to JSON';
 	echo '</header>';
 
-	echo '<p>Sleep as Android normally outputs your sleep data in CSV format. If you want to have it in a more human-friedly JSON format, you can convert it here.</p>';
-	echo '<p>To download your CSV file from Sleep as Android, tap <i>Backup</i> in the left menu drawer and choose <i>Export data</i>. The CSV can be found in /sleep-data/sleep-export.csv on your internal memory.</p>';
-
+	echo '<p>Sleep as Android normally outputs your sleep data in CSV format. If you want to have it in a more human-readable JSON format, you can convert it here.</p>';
+	echo '<p>To download your CSV file from Sleep as Android, tap <b>Backup</b> in the left menu drawer and choose <b>Export data</b>. The CSV can be found in /sleep-data/sleep-export.csv on your internal memory.</p>';
 
 
 	echo '<form action="javascript:void(0)" method="POST" enctype="multipart/form-data" autocomplete="off">';
@@ -257,9 +219,9 @@ $(document).ready(function() {
 
 	echo '</form>';
 
-	echo '<p id="privacy">The file is converted on the fly, your data is deleted from the server right after the conversion. The convertor is open-source (<a href="https://github.com/urbandroid-team/sleep-csv-to-json" target="_blank">see the source</a>) so you can take a look yourself, or run it on your server/local computer.</p>';
 
-	echo '<p id="made-by">Made by Erik. Check out his other project - the weather service <a href="https://serenum.org/" target="_blank">Serenum</a>.</p>';
+	echo '<p id="privacy">The file is converted on the fly, your data is deleted from the server right after the conversion. The convertor is open-source (<a href="https://github.com/urbandroid-team/sleep-csv-to-json" target="_blank">see the source</a>) so you can take a look yourself, or run it on your server/local computer.</p>';
+	echo '<p id="made-by">Made by <a href="https://airikr.me/lang:en" target="_blank">Erik</a>. Check out his other project, the weather service <a href="https://serenum.org/" target="_blank">Serenum</a>.</p>';
 
 
 ?>
